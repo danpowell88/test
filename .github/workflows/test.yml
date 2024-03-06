@@ -1,0 +1,21 @@
+name: build
+
+on:
+  push:
+
+env: 
+  TEMPLATE: "{ \"template\": \"youiservice\",\"params\" : [{ \"name\": \"includeWorker\",\"value\": \"def\"},{\"name\": \"landingZone\",\"value\": \"abc\"}]}"
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - uses: filipstefansson/uuid-action@v1
+        id: generate-uuid
+      - name: Append UUID to TEMPLATE #used to have a unique id to refer to template instance later in the workflow
+        run: |
+          UUID=${{ steps.generate-uuid.outputs.uuid }}
+          TEMPLATE=$(echo $TEMPLATE | jq --arg uuid "$UUID" '. + {guid: $uuid}')
+          echo $TEMPLATE
+          echo "'TEMPLATE=$TEMPLATE'" >> $GITHUB_ENV
+   
