@@ -4,7 +4,7 @@ on:
   push:
 
 env: 
-  TEMPLATE: "{ \"template\": \"youiservice\",\"params\" : [{ \"name\": \"includeWorker\",\"value\": \"def\"},{\"name\": \"landingZone\",\"value\": \"abc\"}]}"
+  TEMPLATE: '{ \"template\": \"youiservice\",\"params\" : [{ \"name\": \"includeWorker\",\"value\": \"def\"},{\"name\": \"landingZone\",\"value\": \"abc\"}]}'
 
 jobs:
   test:
