@@ -19,4 +19,4 @@ jobs:
           #echo "TEMPLATE='$TEMPLATE'" >> $GITHUB_ENV
           #echo "TEMPLATE=$TEMPLATE" >> $GITHUB_ENV
           #echo 'TEMPLATE=$TEMPLATE' >> $GITHUB_ENV
-          echo 'TEMPLATE=$TEMPLATE'
+          echo "TEMPLATE=$TEMPLATE"
