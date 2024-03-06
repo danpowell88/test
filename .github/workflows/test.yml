@@ -14,7 +14,7 @@ jobs:
         id: generate-uuid
       - name: Append UUID to TEMPLATE #used to have a unique id to refer to template instance later in the workflow
         run: |
-          TEMPLATE=$(echo $TEMPLATE" | jq --arg uuid "${{ steps.generate-uuid.outputs.uuid }}" '. + {guid: $uuid}')
+          TEMPLATE=$(echo "$TEMPLATE" | jq --arg uuid "${{ steps.generate-uuid.outputs.uuid }}" '. + {guid: $uuid}')
           #echo "TEMPLATE='$TEMPLATE'" >> $GITHUB_ENV
           #echo "TEMPLATE=$TEMPLATE" >> $GITHUB_ENV
           #echo 'TEMPLATE=$TEMPLATE' >> $GITHUB_ENV
