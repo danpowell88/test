@@ -17,5 +17,5 @@ jobs:
           UUID=${{ steps.generate-uuid.outputs.uuid }}
           TEMPLATE=$(echo $TEMPLATE | jq --arg uuid "$UUID" '. + {guid: $uuid}')
           echo $TEMPLATE
-          echo "'TEMPLATE=$TEMPLATE'" >> $GITHUB_ENV
+          echo "TEMPLATE='$TEMPLATE'" >> $GITHUB_ENV
    
