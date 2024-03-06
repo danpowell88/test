@@ -12,6 +12,6 @@ jobs:
     steps:
       - run: |
           TEMPLATE=$(echo ${{env.TEMPLATE}} | jq -c --arg uuid "95057cd0-db9c-11ee-a835-2d2328ea369f" '. + {guid: $uuid}')
-          echo "TEMPLATE1=$TEMPLATE" >> $GITHUB_ENV
+          echo "TEMPLATE=$TEMPLATE" >> $GITHUB_ENV
         id: foo
-      - run: echo '${{env.TEMPLATE1}}'
+      - run: echo '${{env.TEMPLATE}}'
